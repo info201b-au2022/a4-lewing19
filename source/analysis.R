@@ -1,10 +1,13 @@
 library(tidyverse)
 library(usmap)
 library(dplyr)
+library(ggplot2)
+library(mapproj)
 
-incarceration_df <- read.csv("~/Documents/info201/assignments/a4-lewing19/docs/incarceration-trends/incarceration_trends.csv")
+incarceration_df <- read.csv("~/Documents/info201/assignments/a4-lewing19/source/incarceration_trends.csv")
   setwd("~/Documents/info201/assignments/a4-lewing19/docs")
   source("../source/a4-helpers.R")
+
 
 ## Section 2  ---- 
 #----------------------------------------------------------------------------#
@@ -45,7 +48,6 @@ get_year_jail_pop <- function() {
 return(view_incarceration_df)
 }
 
-# This function ... <todo:  update comment>
 plot_jail_pop_for_us <- function() {
   jail_chart <- ggplot(get_year_jail_pop()) +
   geom_col(mapping = aes(x = year, y = total_jail_pop)) +
@@ -102,7 +104,6 @@ plot_black_white_jail_compare <- function() {
     labs(title = "Black Population versus White Population in Jail in California", x = "Year", y = "White Jail Population versus Black Jail Population", caption = "The comparison of Black and White Jail Population in California")
   return(california_jail_compare_chart)
 }
-view(california_jail_compare)
 
 print(plot_black_white_jail_compare())
 ## Section 6  ---- 
