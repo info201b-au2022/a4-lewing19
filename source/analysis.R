@@ -2,7 +2,6 @@ library(tidyverse)
 library(usmap)
 library(dplyr)
 library(ggplot2)
-library(mapproj)
 
 incarceration_df <- read.csv("~/Documents/info201/assignments/a4-lewing19/source/incarceration_trends.csv")
   setwd("~/Documents/info201/assignments/a4-lewing19/docs")
